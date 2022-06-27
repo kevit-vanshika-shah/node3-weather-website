@@ -7,7 +7,7 @@ const forecast = require("./utils/forecast");
 // console.log(path.  join(__dirname, "../public"));
 
 const app = express(); //this method creates(generates) a new express application & store our application in app variable
-
+const port = process.env.PORT || 3000;
 //defining paths for Express config
 const publicDirectoryPath = path.join(__dirname, "../public");
 const viewsPath = path.join(__dirname, "../templates/views");
@@ -112,6 +112,6 @@ app.get("*", (req, res) => {
   });
 });
 
-app.listen(3000, () => {
-  console.log("Server is up on port 3000!");
+app.listen(port, () => {
+  console.log(`Server is up on port ${port}!`);
 });

@@ -1,0 +1,2 @@
+# things listed here won't get tracked. This file is used to explicitely not track unwanted files
+node_modules/ 

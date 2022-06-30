@@ -31,23 +31,18 @@ const axios = require("axios");
 // };
 
 async function forecast(latitude, longitude, callback) {
-  const url =
-    "http://api.weatherstack.com/current?access_key=e1a2f59bb33e3100c992b6981613691c&query=" +
-    latitude +
-    "," +
-    longitude +
-    "&units=f";
+  const url = `http://api.weatherstack.com/current?access_key=e1a2f59bb33e3100c992b6981613691c&query=${latitude},${longitude}&units=f`;
   try {
     const response = await axios.get(url);
     const data = response.data;
-    //console.log(response);
+    // console.log(data);
     if (data.error) {
       return callback("Unable to find location.", undefined);
     } else {
       callback(
         undefined,
         `${data.current.weather_descriptions[0]} It is currently ${data.current.temperature} degrees out. It feels like ${data.current.feelslike} degrees out.
-        The humidity is ${data.humidity} %.`
+        The humidity is ${data.current.humidity} %.`
       );
     }
   } catch (error) {

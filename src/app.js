@@ -30,7 +30,7 @@ app.use(express.static(publicDirectoryPath));
 app.get("", (req, res) => {
   //setting up route for dynamic content stored in hbs file of views folder
   res.render("index", {
-    title: "Weather ",
+    title: "Weather Info",
     name: "El Cooper",
   });
 });

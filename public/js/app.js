@@ -47,7 +47,8 @@ weatherForm.addEventListener("submit", async (e) => {
       // console.log(data.location);
       // console.log(data.forecast);
     }
-  } catch (e) {}
-  console.log(e);
+  } catch (error) {
+    messageOne.textContent = error + " Please Check your Internet connection";
+  }
 });
 //});
